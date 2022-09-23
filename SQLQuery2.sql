@@ -40,6 +40,8 @@ SELECT * FROM Usuarios
 SELECT UsuarioId, Email, Senha FROM Usuarios WHERE UsuarioId = 1
 
 SELECT UsuarioId, Email, HASHBYTES('MD2', Senha) AS 'Senha' FROM Usuarios WHERE UsuarioId = 1
+SELECT UsuarioId, Email, HASHBYTES ('SHA2_512', Senha) , Nome FROM Usuarios WHERE UsuarioId = 1
+GO
 
 --Procedures -> Funções 
 
@@ -58,3 +60,4 @@ SELECT UsuarioId, Email, Nome, HASHBYTES('SHA1', Senha) AS 'Senha' FROM Usuarios
 SELECT UsuarioId, Email, Nome, HASHBYTES('SHA2_256', Senha) AS 'Senha' FROM Usuarios WHERE UsuarioId in ('1','3','4','5', '6','7', '8')  
 
 SELECT UsuarioId, Email, Nome, HASHBYTES('SHA2_512', Senha) AS 'Senha' FROM Usuarios WHERE UsuarioId in ('1','3','4','5', '6','7', '8')  
+GO
